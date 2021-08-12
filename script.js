@@ -1,5 +1,4 @@
 let currentDay = document.querySelector("#currentDay");
+let 
 
 
-
-${"#currentDay"} = moment().format("LTS")
