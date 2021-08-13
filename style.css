@@ -1,7 +1,7 @@
 body {
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
-    line-height: 1;
+    line-height: .7;
   }
   
   textarea {
@@ -37,9 +37,9 @@ body {
   }
   
   .hour {
-    /* background-color: #ffffff; */
+    background-color: #ffffff;
     color: #000000;
-    /* border-top: 1px dashed #000000; */
+    border-top: 1px dashed #000000;
     /* didn't like the look with this */
   }
   

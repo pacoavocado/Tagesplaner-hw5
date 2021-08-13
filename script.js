@@ -1,8 +1,20 @@
 let currentDay = document.querySelector('#currentDay');
+let pastHour = document.querySelector('.past');
+let currentHour = document.querySelector('.present');
+let nextHour = document.querySelector('.future')
+let saveHover = document.querySelector('.i:hover')
+
+
 
 
 clock();
+setColor();
 
+
+
+
+
+// function for date and time on header
 function clock() {
     
     setInterval(function () {
@@ -10,18 +22,74 @@ function clock() {
         $(currentDay).text(currentTime)
         
     }, 1000);
-  }
+    
+}
 
-    $("#9am").val(localStorage.getItem("#9am"));
-    $("#10am").val(localStorage.getItem("#10am"));
-    $("#11am").val(localStorage.getItem("#11am"));
-    $("#12pm").val(localStorage.getItem("#12pm"));
-    $("#1pm").val(localStorage.getItem("#1pm"));
-    $("#2pm").val(localStorage.getItem("#2pm"));
-    $("#3pm").val(localStorage.getItem("#3pm"));
-    $("#4pm").val(localStorage.getItem("#4pm"));
-    $("#5pm").val(localStorage.getItem("#5pm"));
 
+// struggleing to set color based on hour to work
+function setColor() {
+    let thisHour = moment().format("HH");
+    // let thisHour = 9;
+    
+   
+    console.log(thisHour)
+    if (thisHour = 09 ) {
+        console.log("why?")
+        document.querySelector('textarea').setAttribute("class", "present");
+    }
+    if (thisHour < 09) {
+    console.log('headway');
+        document.querySelector('textarea').setAttribute("class", "past");
+        // $('#9am').$("class", "past")
+    
+    }
+    if (thisHour > 09) {
+        document.getElementById('textarea').setAttribute("class", "future");
+    }
+    
+    if (thisHour = 1) {
+        localStorage.clear();
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// recalling from local storage
+
+$("#9am").val(localStorage.getItem("#9am"));
+$("#10am").val(localStorage.getItem("#10am"));
+$("#11am").val(localStorage.getItem("#11am"));
+$("#12pm").val(localStorage.getItem("#12pm"));
+$("#1pm").val(localStorage.getItem("#1pm"));
+$("#2pm").val(localStorage.getItem("#2pm"));
+$("#3pm").val(localStorage.getItem("#3pm"));
+$("#4pm").val(localStorage.getItem("#4pm"));
+$("#5pm").val(localStorage.getItem("#5pm"));
+
+
+// saving to local storage 
 
 $('.saveBtn').on('click', function (e) {
     localStorage.setItem("#9am", $("#9am").val())
@@ -34,3 +102,5 @@ $('.saveBtn').on('click', function (e) {
     localStorage.setItem("#4pm", $("#4pm").val())
     localStorage.setItem("#5pm", $("#5pm").val())
 })
+
+
