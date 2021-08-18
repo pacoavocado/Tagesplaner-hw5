@@ -45,11 +45,6 @@ $(".time-block").each(function() {
 }    
 )
 
-// $(.hour).each function() {
-//     let headID = $(this).attr("id")
-// }    
-
-
 
 
 
