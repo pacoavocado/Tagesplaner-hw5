@@ -8,7 +8,7 @@ let saveHover = document.querySelector('.i:hover')
 
 
 clock();
-setColor();
+// setColor();
 
 
 
@@ -24,37 +24,30 @@ function clock() {
     }, 1000);
     
 }
-
-
+$(".time-block").each(function() {
+    let headID = this.id;
+    let toDo = localStorage.getItem(headID);
+    $(this).children('description').val(toDo);
 // struggleing to set color based on hour to work
-function setColor() {
-    let thisHour = moment().format("HH");
+// function setColor() {
+    let thisHour = moment().hours();
     // let thisHour = 9;
-    
-   
-    console.log(thisHour)
-    if (thisHour = 09 ) {
-        console.log("why?")
-        document.querySelector('textarea').setAttribute("class", "present");
+    headID = parseInt(headID)
+    if (thisHour > headID) {
+        $(this).addClass("past")
     }
-    if (thisHour < 09) {
-    console.log('headway');
-        document.querySelector('textarea').setAttribute("class", "past");
-        // $('#9am').$("class", "past")
-    
+    if (thisHour === headID) {
+        $(this).addClass("present")
     }
-    if (thisHour > 09) {
-        document.getElementById('textarea').setAttribute("class", "future");
+    if (thisHour < headID) {
+        $(this).addClass("future")
     }
-    
-    if (thisHour = 1) {
-        localStorage.clear();
-    }
-}
+}    
+)
 
-
-
-
+// $(.hour).each function() {
+//     let headID = $(this).attr("id")
+// }    
 
 
 
