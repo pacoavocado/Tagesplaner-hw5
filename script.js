@@ -1,18 +1,13 @@
 let currentDay = document.querySelector('#currentDay');
-let pastHour = document.querySelector('.past');
-let currentHour = document.querySelector('.present');
-let nextHour = document.querySelector('.future')
+// let pastHour = document.querySelector('.past');
+// let currentHour = document.querySelector('.present');
+// let nextHour = document.querySelector('.future')
 let saveHover = document.querySelector('.i:hover')
 
 
 
-
+// calls the clock function when page loads
 clock();
-// setColor();
-
-
-
-
 
 // function for date and time on header
 function clock() {
@@ -28,10 +23,9 @@ $(".time-block").each(function() {
     let headID = this.id;
     let toDo = localStorage.getItem(headID);
     $(this).children('description').val(toDo);
-// struggleing to set color based on hour to work
-// function setColor() {
+
     let thisHour = moment().hours();
-    // let thisHour = 9;
+    
     headID = parseInt(headID)
     if (thisHour > headID) {
         $(this).addClass("past")
