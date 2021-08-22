@@ -42,22 +42,6 @@ $(".time-block").each(function() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // recalling from local storage
 
 $("#9am").val(localStorage.getItem("#9am"));
